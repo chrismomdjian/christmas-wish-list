@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Add a Person {% endblock %}
+
+{% block header %} Add a Person {% endblock %}
+
+{% block content %}
+  <form action="/added" method="POST">
+    <div class="form-group">
+      <label>Name</label><br />
+      <input type="text" class="form-control" name="name">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Add" />
+    </div>
+  </form>
+
+  <a href="{{ url_for('index') }}"><button>Back to home</button></a>
+{% endblock %}

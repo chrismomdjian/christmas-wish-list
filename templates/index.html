@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Wishlist {% endblock %}
+
+{% block header %} Christmas Wishlist Program {% endblock %}
+
+{% block content %}
+  <a href="{{ url_for('add') }}"><button style="margin-bottom: 10px;">Add a Person</button></a>
+  <ul class="list-group">
+    {% for row in rows %}
+    <li class="list-group-item"><a href="/person/{{ row['id'] }}">{{ row["name"] }}</a> | <a href="/edit/{{ row['id'] }}"><button>edit</button></a> | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
