@@ -10,6 +10,7 @@
     {% for row in rows %}
     <li class="list-group-item"><a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
       | {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
+      | {{ row["gift"] }}
       | <a href="/edit/{{ row['id'] }}"><button>edit</button></a>
       | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a>
     </li>
