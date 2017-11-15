@@ -8,7 +8,11 @@
   <a href="{{ url_for('add') }}"><button style="margin-bottom: 10px;">Add a Person</button></a>
   <ul class="list-group">
     {% for row in rows %}
-    <li class="list-group-item"><a href="/person/{{ row['id'] }}">{{ row["name"] }}</a> | <a href="/edit/{{ row['id'] }}"><button>edit</button></a> | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a></li>
+    <li class="list-group-item"><a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
+      | {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
+      | <a href="/edit/{{ row['id'] }}"><button>edit</button></a>
+      | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a>
+    </li>
     {% endfor %}
   </ul>
 {% endblock %}
