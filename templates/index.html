@@ -6,14 +6,34 @@
 
 {% block content %}
   <a href="{{ url_for('add') }}"><button style="margin-bottom: 10px;">Add a Person</button></a>
-  <ul class="list-group">
+  <!-- <ul class="list-group">
     {% for row in rows %}
-    <li class="list-group-item"><a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
+    <li class="list-group-item">
+      <a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
       | {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
       | {{ row["gift"] }}
       | <a href="/edit/{{ row['id'] }}"><button>edit</button></a>
       | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a>
     </li>
     {% endfor %}
-  </ul>
+  </ul> -->
+
+  <!-- second ui test -->
+  {% for row in rows %}
+  <div class="row record">
+    <div class="col-sm-3">
+      <a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
+    </div>
+    <div class="col-sm-3">
+      {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
+    </div>
+    <div class="col-sm-3">
+      {{ row["gift"] }}
+    </div>
+    <div class="col-sm-3">
+      <a href="/edit/{{ row['id'] }}"><button>edit</button></a>
+      <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a>
+    </div>
+  </div>
+  {% endfor %}
 {% endblock %}

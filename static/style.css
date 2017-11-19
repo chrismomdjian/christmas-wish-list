@@ -7,6 +7,16 @@ body {
   margin: 20px auto;
 }
 
+.record {
+  text-align: center;
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 25px 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 800px) {
   .container-2 {
     width: 80%;
