@@ -6,17 +6,22 @@
 
 {% block content %}
   <a href="{{ url_for('add') }}"><button style="margin-bottom: 10px;">Add a Person</button></a>
-  <!-- <ul class="list-group">
-    {% for row in rows %}
-    <li class="list-group-item">
-      <a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
-      | {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
-      | {{ row["gift"] }}
-      | <a href="/edit/{{ row['id'] }}"><button>edit</button></a>
-      | <a href="/delete/{{ row['id'] }}"><button style="color: red;">delete</button></a>
-    </li>
-    {% endfor %}
-  </ul> -->
+
+  <!-- HEADER -->
+  <div class="row header-row text-center">
+    <div class="col-sm-3">
+      <p>Name</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Status</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Gift</p>
+    </div>
+    <div class="col-sm-3">
+      <p>Controls</p>
+    </div>
+  </div>
 
   <!-- second ui test -->
   {% for row in rows %}
@@ -25,7 +30,7 @@
       <a href="/person/{{ row['id'] }}">{{ row["name"] }}</a>
     </div>
     <div class="col-sm-3">
-      {% if row["complete"] == "True" %} Completed {% else %} Incomplete {% endif %}
+      {% if row["complete"] == "True" %} <img src="static/images/success.png" alt="completed"/> {% else %} <img src="static/images/danger.png" alt="incomplete"/> {% endif %}
     </div>
     <div class="col-sm-3">
       {{ row["gift"] }}

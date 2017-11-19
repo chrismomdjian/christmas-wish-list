@@ -7,6 +7,11 @@ body {
   margin: 20px auto;
 }
 
+.header-row {
+  font-weight: bold;
+  color: #333;
+}
+
 .record {
   text-align: center;
   background-color: lightgrey;
